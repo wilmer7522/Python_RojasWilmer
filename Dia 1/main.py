@@ -44,8 +44,8 @@ numerico = str(numerico)
 print(type(numerico))
 
 #Bucles For y While
-num = [2,4,6,8]
-for i in num:
+
+for i in range (10,20+1):
     print(i)
 
 #Funciones (4 Tipos)
