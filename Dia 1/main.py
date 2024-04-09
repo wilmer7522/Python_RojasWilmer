@@ -45,9 +45,46 @@ print(type(numerico))
 
 #Bucles For y While
 
-for i in range (10,20+1):
+for i in range (1,5):
     print(i)
 
+
+while True:
+    print("ingrese la palabra clave")
+    entrada = input()
+
+    if entrada == "buenos dias":
+        print("es hora de levantarse")
+        break
+    else:
+        print("no ingreso la palabra clave")
+
+
 #Funciones (4 Tipos)
+#sin parametros sin retorno
+def python():
+    print("esto es python!!!") 
+python()
+
+#sin parametros con retorno
+def retorno():
+    return 50
+numero = retorno()
+print("el numero retornado es ", numero)
+
+#con parametros sin retorno
+def bienvenido(nombre):
+    print("bienvenido a python", nombre)
+    
+nombre_ingresado = input("Ingresa tu nombre ")
+bienvenido(nombre_ingresado)
+
+#con parametros con retorno
+def con_parametro(a,b):
+    return a+b
+a = "hola "
+b = "bienvenido a python"
+mensaje = con_parametro(a,b)
+print(mensaje)
 
 #Desarrollado por Wilmer Rojas - C.C 134310528
