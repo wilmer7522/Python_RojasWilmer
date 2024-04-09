@@ -36,15 +36,18 @@ print("Tu nombre es", nuevo)
 #Conversion de tipos de variable
 numerico = 10
 print(type(numerico))
-numerico = 15.6
+numerico = float(numerico)
 print(type(numerico))
-numerico = True
+numerico = bool(numerico)
 print(type(numerico))
-numerico = "esto es un texto"
+numerico = str(numerico)
 print(type(numerico))
 
 #Bucles For y While
-for 
+num = [2,4,6,8]
+for i in num:
+    print(i)
+
 #Funciones (4 Tipos)
 
 #Desarrollado por Wilmer Rojas - C.C 134310528
