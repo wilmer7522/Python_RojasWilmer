@@ -1,18 +1,44 @@
-print("la sucesión de Fibonacci se trata de una serie infinita de números naturales que empieza con un 0 y un 1\n y continúa añadiendo números que son la suma de los dos anteriores")
-print("\n por favor ingresa un numero hasta donde quiere que se detenga la sucesion de fibonacci")
-
-n = input()
-def fib(n):
-    if n < 2:
-        return n
-    else:
-        # fn = fn-1 + fn-2
-        return fib(n-1) + fib(n-2)
     
-fib(8)
 
 
-for i in range():
-    print(fib(i))
+while True:
+    print("la sucesión de Fibonacci se trata de una serie infinita de números naturales que empieza con un 0 y un 1\n y continúa añadiendo números que son la suma de los dos anteriores")
+
+    print("\nPor favor ingresa un número hasta donde quieres que se detenga la sucesión de Fibonacci (ingresa '0' para salir):")
+    numero = input()
+    numero = int(numero)
+    
+    A = 0
+    B = 1
+
+    for i in range(1, numero):
+        while B < 89:
+            print(B)
+            break
+        C = B
+        B = C + A
+        A = C
+    
+    print("¿Desea continuar? (1)si (2)no:")
+    respuesta = int(input())
+    if respuesta == 2:
+        print("Saliendo del programa...")
+        break
+    elif respuesta == 1:
+        print("sigamos")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
