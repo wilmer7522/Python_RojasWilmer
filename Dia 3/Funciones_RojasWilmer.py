@@ -50,9 +50,9 @@ print("")
 def lista():
         print("Elige la longitud de tu comtraseña entre 8 y 15 caractares")
         print("(1) ¿Quieres que tenga mayusculas?")
-        print("(2) ¿Quieres que tenga minusculas?")
-        print("(3) ¿Quieres que tenga numeros?")
-        print("(4) ¿Quieres que tenga simbolos?")
+        print("(2) ¿Quieres que tenga mayusculas y minusculas?")
+        print("(3) ¿Quieres que tenga letras Mayusculas, Minusculas y numeros?")
+        print("(4) ¿Quieres que tenga letras Mayusculas, Minusculas, numeros y simbolos?")
         print("(5) Salir")
 seguir = True
 def men():
@@ -64,7 +64,7 @@ def men():
             import random, string
 
             def contra(n):
-                todo1 = list(string.ascii_uppercase)+list(string.ascii_letters)
+                todo1 = list(string.ascii_uppercase)
                 
                 p = []
                                                 
@@ -82,7 +82,8 @@ def men():
             import random, string
             def contra(n):
                 
-                todo2 = list(string.ascii_lowercase)
+                todo2 = list(string.ascii_letters)
+
                                 
                 p2 = []
                 for i in range(n):
@@ -97,7 +98,7 @@ def men():
         elif pa == 3:
             import random, string
             def contra(n):
-                todo3 = list(string.digits)
+                todo3 = list(string.digits)+list(string.ascii_letters)
                 p3 = []
                 for i in range(n):
                     nw = random.choice(todo3)
@@ -112,7 +113,7 @@ def men():
         elif pa == 4:
             import random, string
             def contra(n):
-                todo = list(string.punctuation)
+                todo = list(string.punctuation)+list(string.ascii_letters)+list(string.digits)
                 p4 = []
                 for i in range(n):
                     nw = random.choice(todo)
