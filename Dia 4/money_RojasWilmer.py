@@ -3,7 +3,7 @@ seguir = True
 while seguir:
 
     ingreso = int(input("Ingresa el dinero "))
-    lista = [10, 5,1]#se crea una lista para definir los valores 
+    lista = [10,5,1]#se crea una lista para definir los valores 
     suma = 0# se crea una variable para sumar la cantidad de monedas que se usaron para dar el cambio
     cant = 0# se crea una variable para hacer el calculo de las monedas necesarias de cada tipo
     for i in lista:
