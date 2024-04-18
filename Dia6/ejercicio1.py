@@ -1,7 +1,5 @@
-
-
 arreglo = []#arreglo vacio para guardar lo que el usuario ingrese
-ent = list(set(map(int,input(arreglo).split()[0:300])))#el usuario ingresa la lista de numeros a verificar si estan duplicados y automaticamente los convierte en entero
+ent = list(set(map(int,input(arreglo).split(',')[0:300])))#el usuario ingresa la lista de numeros a verificar si estan duplicados y automaticamente los convierte en entero
 
 part = True#se declara un boleano
 while part == True:#while para condicionar el ciclo
