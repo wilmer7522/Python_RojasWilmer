@@ -1,4 +1,5 @@
 n=input("")
+lista = []
 lista = list(sorted(set(map(int,n.split(",")))))
 lista.sort()
 target =  int(input())

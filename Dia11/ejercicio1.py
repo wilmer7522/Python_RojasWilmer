@@ -38,9 +38,13 @@ while volver:
 
     elif opt == 2:
         if datos:
+            tipo = input("ingrese tipo de evento")
             for i, evento in enumerate(datos,1):#recorre i en toda la lista enumerando cada valor 
-                            
-                print(f"numero: {i+1} - {evento["type"]} - {evento["id"]}")#imprime lista com su respectivo ID
+                evento.append(tipo)
+            print(datos[0]["type"])            
+                #print(f"numero:{i+1} - ID:{evento["id"]} - Type:{evento["type"]} - Actor:{evento["actor"]} - Repo:{evento["repo"]}")#imprime lista com su respectivo ID
+            print("")
+                
 
     
     elif opt == 3:
@@ -74,6 +78,9 @@ while volver:
     elif opt == 0:
         print("Terminando el programa...")
         volver = False
+
+with open("eventos.json","w") as outfile:
+    json.dump(datos,outfile)
     
     
     
