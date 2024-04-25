@@ -21,7 +21,9 @@ with open(lista,encoding="utf-8") as file:#abre o llama el archivo .json y codif
     datos = json.load(file)#crea nueva vaiable para cargar con load()
     
       
-    
+for i in range(len(datos)):
+    if (datos[i]["type"] == "PublicEvent"):
+        PublicEvent.append(datos[i])    
     
 volver = True
 while volver:    
@@ -354,9 +356,7 @@ while volver:
                 print("--------created_at:",MemberEvent[q]['created_at'])
 
         elif opt_event == 14:
-            for i in range(len(datos)):
-                if (datos[i]["type"] == "PublicEvent"):
-                    PublicEvent.append(datos[i])
+            
                         
             for q in range(len(PublicEvent)):
                 print("#######################")
@@ -375,29 +375,65 @@ while volver:
                 print("--------name:",PublicEvent[q]['repo']['name'])
                 print("--------url:",PublicEvent[q]['repo']['url'])
                 print("--------Public:",PublicEvent[q]['public'])
-                print("--------created_at:",PublicEvent[q]['created_at'])
+                #print("--------created_at:",PublicEvent[q]['created_at'])
 
-            print("elige una opcion\n(1) Crear\n(2) Actualizar\n(3) Eliminar\n ")
+            print("elige una opcion\n(1) Crear\n(2) Actualizar\n(3) Eliminar\n(0) Salir ")
             opt_modif = int(input("ingresa tu opcion: "))
             if opt_modif == 1:
-                valor_id = (input("Ingrese la ID a Crear: "))
+                valor_id = str(input("Ingrese la ID a Crear: "))
 
-                if valor_id in datos:
+                for i in range(0,len(datos)):
+                    if valor_id != datos[i]["id"]:
+                        
                     
-                
-                    tipo_evento = input("ingrese nuevo evento: ")#ingresamos el nombre del evento que se guarda en "type"
-                    actor_id = input("Ingrese la ID del actor: ")
-                    actor_login = input("ingrese login del actor: ")
-                    actor_gravatar = input("ingrese el gravatar del actor: ")
-                    actor_url = input("Ingrese url de actor: ")
-                    actor_avatar_url = input("Ingrese el avatar_url de actor: ")
-                    nuevo = {"type": tipo_evento, "actor":{"id": actor_id,"login":actor_login,"gravatar":actor_gravatar,"url":actor_url,"avtar_url":actor_avatar_url}}#se guardan ambos datos en un diccionario
-                    datos.append(nuevo)#se pasan los datos del diccionario a datos
-                   
-                   
-                    print(f"Nuevo evento agregado")
-                else:
-                    print("ID ya existe")
+                        tipo_evento = input("ingrese nuevo evento: ")#ingresamos el nombre del evento que se guarda en "type"
+                        actor_id = input("Ingrese la ID del actor: ")
+                        actor_login = input("ingrese login del actor: ")
+                        actor_gravatar = input("ingrese el gravatar del actor: ")
+                        actor_url = input("Ingrese url de actor: ")
+                        actor_avatar_url = input("Ingrese el avatar_url de actor: ")
+                        repo_id = input("Ingrese ID del repo: ")
+                        repo_name = input("Ingrese el name del repo: ")
+                        repo_url = input("ingrese url del repo: ")
+                        public = input("ingrese public: True o False")
+                        nuevo = {"id":valor_id,"type": tipo_evento,
+                                  "actor":{"id": actor_id,"login":actor_login,"gravatar_id":actor_gravatar,"url":actor_url,"avatar_url":actor_avatar_url},
+                                  "repo":{"id":repo_id, "name":repo_name,"url":repo_url },"public":public}#se guardan ambos datos en un diccionario
+                        datos.append(nuevo)#se pasan los datos del diccionario a datos
+                    
+                    
+                        print(f"Nuevo evento agregado")
+                        break
+                    else:
+                        print("ID ya existe")
+
+            elif opt_modif == 2:
+                valor_id2 = str(input("Ingrese la ID a modificar: "))
+                for i in range(0,len(datos)):
+                    if valor_id2 == datos[i]["id"]:
+                        
+                    
+                        tipo_evento = input("ingrese nuevo evento: ")#ingresamos el nombre del evento que se guarda en "type"
+                        actor_id = input("Ingrese la ID del actor: ")
+                        actor_login = input("ingrese login del actor: ")
+                        actor_gravatar = input("ingrese el gravatar del actor: ")
+                        actor_url = input("Ingrese url de actor: ")
+                        actor_avatar_url = input("Ingrese el avatar_url de actor: ")
+                        repo_id = input("Ingrese ID del repo: ")
+                        repo_name = input("Ingrese el name del repo: ")
+                        repo_url = input("ingrese url del repo: ")
+                        public = input("ingrese public: True o False")
+                        nuevo = {"id":valor_id,"type": tipo_evento,
+                                  "actor":{"id": actor_id,"login":actor_login,"gravatar_id":actor_gravatar,"url":actor_url,"avatar_url":actor_avatar_url},
+                                  "repo":{"id":repo_id, "name":repo_name,"url":repo_url },"public":public}#se guardan ambos datos en un diccionario
+                        datos.append(nuevo)#se pasan los datos del diccionario a datos
+                    
+                    
+                        print(f"Nuevo evento agregado")
+                        break
+                    else:
+                        print("ID no existe")
+                        
               
 
 
@@ -472,7 +508,7 @@ while volver:
         print("Terminando el programa...")
         volver = False
 
-with open("eventos.json","w") as outfile:
+with open("large-file.json","w") as outfile:
     json.dump(datos,outfile)
     
     
